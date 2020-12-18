@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+      Tickets
+    </div>
+    <div class="card-body">
+        <div>
+          <strong>
+            Total Record: {{ totalTicket || '0' }}
+          </strong>
+        </div>
+
+        <div>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Assignee</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr *ngFor="let ticket of ticketList">
+                    <td>
+                      <strong>[{{ ticket.template.alias }}]</strong> {{ ticket.template.name }}
+                      <div>
+                        #{{ ticket.serial }}
+                      </div>
+                    </td>
+                    <td>{{ ticket.assignee || 'Unassigned' }}</td>
+                    <td>{{ ticket.priority }}</td>
+                    <td>{{ ticket.status }}</td>
+                    <td>
+                      <button class="btn btn-info"
+                              type="button"
+                              [routerLink]="'ticket/'+ticket?.id+'/view'">
+                          View
+                      </button>
+                    </td>
+                  </tr>
+
+                </tbody>
+           </table>
+        </div>
+    </div>
+  </div>
+
+

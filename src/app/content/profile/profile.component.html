@@ -1,0 +1,105 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+      Profile
+    </div>
+    <div class="card-body">
+      <h1 class="card-title">Welcome!</h1>
+
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" formControlName="first_name">
+            <span *ngIf="profileForm.get('first_name').hasError('required') && profileForm.get('first_name').touched" class="text-danger">
+                First Name required
+            </span>
+          </div>
+
+          <div class="col-6">
+              <label>Last Name</label>
+              <input type="text" class="form-control" formControlName="last_name">
+              <span *ngIf="profileForm.get('last_name').hasError('required') && profileForm.get('last_name').touched" class="text-danger">
+                  Last Name required
+              </span>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6">
+              <label>Alias</label>
+              <input type="text" class="form-control" formControlName="alias">
+              <span *ngIf="profileForm.get('alias').hasError('required') && profileForm.get('alias').touched" class="text-danger">
+                  Alias required
+              </span>
+          </div>
+          <div class="col-6">
+              <label>Job Title</label>
+              <input type="text" class="form-control" formControlName="job_title">
+              <span *ngIf="profileForm.get('job_title').hasError('required') && profileForm.get('job_title').touched" class="text-danger">
+                  Job Title required
+              </span>
+            </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6">
+              <label>Email</label>
+              <input type="text" class="form-control" formControlName="email">
+              <span *ngIf="profileForm.get('email').hasError('required') && profileForm.get('email').touched" class="text-danger">
+                  Email required
+              </span>
+
+              <div *ngIf="profileForm.get('email').hasError('email') && profileForm.get('email').touched" class="alert alert-danger">
+                  Email is not valid
+              </div>
+
+          </div>
+          <div class="col-6">
+              <label>Mobile Number</label>
+              <input type="text" class="form-control" formControlName="mobile_number">
+              <span *ngIf="profileForm.get('mobile_number').hasError('required') && profileForm.get('mobile_number').touched" class="text-danger">
+                  Mobile Number required
+              </span>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-12">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-12">
+            <label>Confirm Password</label>
+            <input type="text" class="form-control" formControlName="confirm_password">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mt-3">
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-info" type="submit">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+    </div>
+  </div>

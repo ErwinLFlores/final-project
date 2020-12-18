@@ -1,0 +1,14 @@
+<ul class="nav justify-content-center bg-primary mt-5">
+  <li class="nav-item">
+    <a href="#" class="nav-link text-white" routerLink="/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link text-white" routerLink="/ticket">Tickets</a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link text-white" routerLink="/about">About Us</a>
+  </li>
+  <li class="nav-item" *ngIf="!isLogged">
+    <a href="#" class="nav-link text-white" routerLink="/login">Login</a>
+  </li>
+</ul>

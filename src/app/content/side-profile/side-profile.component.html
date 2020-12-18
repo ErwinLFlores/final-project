@@ -1,0 +1,38 @@
+<div class="card">
+  <!-- <div class="card-header bg-primary text-white">
+    Profile
+  </div> -->
+  <div class="card-body">
+
+  <img class="rounded-circle card-img-top img-responsive" src="{{ profileImg || 'https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg'}}"
+    data-holder-rendered="true">
+
+    <div class="col text-center mt-3 mb-3" *ngIf="isLogged">
+        <button class="btn btn-info" routerLink="/profile">
+            Edit Profile
+        </button>
+    </div>
+
+    <div class="" >
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <strong>Name:</strong>
+          {{ full_name }}
+        </li>
+        <li class="list-group-item">
+          <strong>Job Title:</strong>
+          {{ job_title }}
+        </li>
+        <li class="list-group-item">
+          <strong>Email:</strong>
+          {{ email }}
+        </li>
+        <li class="list-group-item">
+          <strong>Mobile Number:</strong>
+          {{ mobile_number }}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
